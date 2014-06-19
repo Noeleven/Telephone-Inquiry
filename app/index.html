@@ -1,0 +1,141 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title ng-bind-template="电话查询系统：{{query}}">电话查询系统</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/ng-table/ng-table.css" />
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbower -->
+    <!-- endbuild -->
+</head>
+<body ng-app="testApp">
+<div id="wrap">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade yo
+    ur browser</a> to improve your experience.</p>
+<![endif]-->
+	<div id="top">
+		<div class="navbar navbar-default navbar-static-top" id="topbar" role="navigation">
+			<div class="container">
+				<div class="navbar-inner">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<ul class="nav navbar-nav">
+						<li>
+							<a><strong><span class="label label-danger">test System</span></strong></a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a><span class="glyphicon glyphicon-heart"></span><strong> 欢迎您</strong></a></li>
+					</ul>
+				</div>
+			</div><!-- / container-->
+		</div><!-- /navbar -->
+	</div>
+	<div class="container">
+		<div class="row">
+			<div id="left" class="well col-md-2">
+				<ul class="nav nav-pills nav-stacked">
+					<li class="active" id="shouye">
+						<a href="#/search">
+							<span class="glyphicon glyphicon-home"></span> 查询</a>
+					</li>
+					<li id="input" class="active">
+						<a href="#/input">
+							<span class="glyphicon glyphicon-edit"></span> 录入
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="container col-md-10">
+				<div ng-view></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Add your site or application content here -->
+<div id="footer">
+    <hr>
+    <div class="container">
+        <div class="row">
+            <font color="white">
+                <div class="col-md-4"><h3>ICEFLOW</h3></div>
+                <div class="col-md-3">
+                    <small>
+                        <p>版权所有<br><br>
+                            <a href="http://www.iceflow.cn"> 上海冰峰计算机网络技术有限公司 </a><br><br>
+                            Copyright ?2001-2013 ICEFLOW Co., Ltd <br>All Rights Reserved</p>
+                </div>
+                <div class="col-md-3">
+                    <span class="glyphicon glyphicon-envelope"> <a href="mailto:lusz@iceflow.cn">Help</a></span><br><br>
+                    <span class="glyphicon glyphicon-earphone"> 021-56550505</span><br><br>
+                    版本号<br>{{msg.version}}
+                </div>
+                <div class="col-md-2">
+                    <p>登录IP：{{msg.ip}}</p>
+                    <p>登录时间：{{msg.loginTime}}</p>
+                    <p>现在时间：{{msg.nowTime}}</p>
+                    </small>
+                </div>
+            </font>
+        </div>
+    </div>
+</div>
+
+
+<!--[if lt IE 9]>
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/json3/lib/json3.min.js"></script>
+<![endif]-->
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/jquery.js"></script>
+<script src="bower_components/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/ng-table/ng-table.js"></script>
+<script src="bower_components/angular-ui-date/src/date.js"></script>
+<script src="bower_components/angular-ui-bootstrap/src/position/position.js"></script>
+<script src="bower_components/angular-ui-bootstrap/src/bindHtml/bindHtml.js"></script>
+<script src="bower_components/angular-ui-bootstrap/src/typeahead/typeahead.js"></script>
+<script src="bower_components/angular-ui-bootstrap/src/datepicker/datepicker.js"></script>
+<script src="bower_components/angular-ui-bootstrap/src/tabs/tabs.js"></script>
+<script src="bower_components/angular-ui-bootstrap/src/modal/modal.js"></script>
+<script src="bower_components/angular-ui-bootstrap/src/transition/transition.js"></script>
+<script src="bower_components/angular-ui-bootstrap/src/pagination/pagination.js"></script>
+
+
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/controller.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/common.js"></script>
+<!-- endbuild -->
+</body>
+</html>
