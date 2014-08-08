@@ -1,0 +1,37 @@
+<div class="row">
+	<div class="panel panel-primary">
+		<div class="panel-heading">员工信息</div>
+		<div class="panel-body">
+			<div class="text-right">
+				<button ng-click="tableParams.sorting({})" class="btn btn-default">重置排序</button>
+				<button ng-click="tableParams.filter({})" class="btn btn-default">重置查询</button>
+			</div>
+			<table ng-table="tableParams" show-filter="true" class="table text-center table-hover">
+				<tr ng-repeat="message in $data">
+					<!-- <td>
+						{{message.id}}
+					</td> -->
+					<td data-title="'姓名'" filter="{'name':'text'}">
+						{{message.name}}
+					</td>
+					<td data-title="'手机号'" filter="{'mphone':'text'}">
+						{{message.mphone}}
+					</td>
+					<td data-title="'座机号'" filter="{'nphone':'text'}">
+						{{message.nphone}}
+					</td>
+					<td  data-title="'邮箱'"  sortable="'mail'" filter="{'mail':'text'}">
+						{{message.mail}}
+					</td>
+					<td  data-title="'职位'" filter="{'position':'text'}">
+						{{message.position}}
+					</td>
+					<td>
+					<button class="btn btn-sm btn-primary" ng-click="skip_list(message)">编辑</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+

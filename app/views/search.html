@@ -1,49 +1,30 @@
-<div class="panel panel-primary" ng-controller="searchCtrl">
-	<div class="panel-heading">电话查询</div>
-	<div class="panel-body">
-		<form class="form-horizontal"  action="search_data" role="form" method="post">
-			<div class="alert alert-info"><small>提示：通过姓名或者邮件地址的关键字能快速找到需要的信息</small></div>
-			<div class="col-md-6">
-				<input type="text" class="form-control" placeholder="请输入" name="name" ng-model="query" required autofocus>
-			</div>
-		</form>
-		<div class="col-md-12">
-			<hr>
-			<div class="col-md-6">
-				<p>共 {{items.length}} 条记录</p>
-			</div>
-			<div class="col-md-6 text-right">
-				<button type="button" class="btn btn-info">Edit</button>
-				<button type="button" class="btn btn-danger">Delete</button>
-			</div>
-			<table class="table table-hover table-responsive">
-				<thead>
-					<tr>
-						<th><input type="checkbox" ng-model="customer.allChecked" ng-change="customer.checkAll(allChecked)"/></th><th>姓名</th><th>座机号码</th><th>手机号码</th><th>邮件地址</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="item in customer.items | filter:query">
-						<td><input type="checkbox" ng-model="item.$checked" /></td>
-						<td>{{item.name}}</td>
-						<td>{{item.lp|number}}</td>
-						<td>{{item.mp}}</td>
-						<td>{{item.email}}</td>
-					</tr>
-				</tbody>
-			</table>
-			<div> 选中的项：<br/>
-				<label class="label label-success" ng-repeat-start="item in customer.selection()">{{item.name}}</label><span ng-if="!$last && $index % 5 !== 4">,</span><br ng-repeat-end ng-if="$index % 5 === 4"/>
-			  </div>
-			<div class="row">
-				<div class="col-md-3">
-					<select title="每页条目数" class="form-control" ng-model="mypage" ng-options="page for page in pages">
-					</select>
-				</div>
-				<div class="col-md-9">
-					<pagination total-items="175" max-size="5" class="pagination-sm" boundary-links="true" rotate="false"></pagination>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+<iv class="container">
+      <div class="row">
+          <div class="panel panel-primary">
+            <div class="panel-heading">电话查询</div>
+            <div class="panel-body">
+               <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <label class="control-label"></label>
+                  <div class="col-sm-12">
+                    <input type="text" class="form-control" placeholder="姓名或Email地址" required autofocus>
+                  </div>
+                </div>
+              </form>
+              <hr>
+              <table class="table table-hover table-responsive table-bordered">
+                <thead>
+                    <tr>
+                      <th>#</th><th>姓名</th><th>手机</th><th>座机</th><th>邮件地址</th><th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td><td>张强</td><td>136xxxxxxxx</td><td>843</td><td>zhangqiang@iceflow.cn</td><td><button class="btn btn-info btn-sm btn-block">详情</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+      </div>
+    </div> <!-- /container -->

@@ -1,0 +1,25 @@
+<div class="container">
+	<!-- <img src="images/11.jpg" class="bg"/> -->
+	<div class="jumbotron">
+		<h1>电话查询系统</h1>
+		<p>帮助你快速找到同事的联系方式</p>
+		<span class="label label-primary">版本：2.0</span>
+	</div>
+	<div class="row">
+	    <div class="col-md-4 col-md-offset-4">
+                <form class="form-group login-form" role="form" name="loginform">
+		    <h2>请登录</h2>
+		        <div ng-show="warning_show">
+			    <p><span class="glyphicon glyphicon-volume-up"></span> <span style="color:red" ng-bind="response"></span></p>
+			</div>
+			<input type="text" class="form-control" name="username" placeholder="Username" ng-model="user.username" required autofocus>
+                        <!--div ng-show="warning-show2">
+			    <p><span class="glyphicon glyphicon-volume-up"></span> <span ng-bing="response2"></span></p>
+			</div-->
+			<br>
+			<input type="password" class="form-control" name="password" placeholder="Password" ng-model="user.password"><br>
+	                <button class="btn btn-lg btn-primary btn-block"  ng-click="Login()">Sign in</button>
+		</form>
+		</div>
+	</div>
+</div> <!-- /container -->
